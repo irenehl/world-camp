@@ -35,13 +35,12 @@
   const SPANS = ["h2", "", "", "h2", "", "", "h2", "", "w2", "", "h2", "", "", "", "h2", "", "", "h2", "", "", "", "h2", "", "", "", "", ""];
 
   const FLOW_EDGES = [
-    ["foto", "recorte"],
-    ["recorte", "fotomarca"], ["recorte", "cat"], ["recorte", "post"], ["recorte", "frame"],
-    ["marca", "post"],
-    ["frame", "clip"],
+    ["foto", "escena1"], ["foto", "escena2"], ["foto", "postig"], ["foto", "cat"],
+    ["escena1", "clip"], ["escena2", "post"],
+    ["clip", "anuncio"],
     ["guion", "voz"],
-    ["clip", "story"], ["voz", "story"],
-    ["musica", "story", "up", 130],
+    ["voz", "anuncio", "up", 60], ["musica", "anuncio", "up", 160],
+    ["ambiente", "anuncio", "up", 260], ["campanas", "anuncio", "up", 360],
   ];
 
   const $ = (s, el = document) => el.querySelector(s);

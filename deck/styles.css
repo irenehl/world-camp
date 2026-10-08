@@ -574,8 +574,11 @@ b { font-weight: 600; }
 .is-active .node { opacity: 1; transform: none; transition-delay: var(--d, 0s); }
 .node .kind { font: 500 19px var(--body); color: var(--ink2); white-space: nowrap; }
 .node strong { font: 600 31px/1.1 var(--title); color: var(--navy); white-space: nowrap; }
-.node-story { width: 260px; height: 440px; padding: 0 30px; }
-.node-story strong { font-size: 56px; }
+.node-main { width: 420px; height: 236px; padding: 0 36px; }
+.node-main strong { font-size: 52px; }
+.node-small { width: 200px; padding: 0 20px; }
+.node-small .kind { font-size: 16px; }
+.node-small strong { font-size: 28px; }
 .badge {
   position: absolute;
   top: -16px; right: 18px;
