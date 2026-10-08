@@ -1,7 +1,10 @@
 (() => {
   // Collage: agrega aquí las imágenes o videos que vayan en assets/collage/
   // ej. "assets/collage/01.jpg", "assets/collage/02.mp4"
-  const COLLAGE_MEDIA = [];
+  const COLLAGE_MEDIA = [
+    ...Array.from({ length: 27 }, (_, i) => `assets/collage/${String(i + 1).padStart(2, "0")}.jpg`),
+    "assets/collage/28.webp",
+  ];
 
   const PARODY = [
     "Descubre el poder de lo extraordinario",
@@ -29,7 +32,7 @@
     ["linear-gradient(135deg,#f9d423,#ff4e50)", "linear-gradient(135deg,#fff6c9,#ff8a6b)"],
     ["linear-gradient(200deg,#0f2027,#2c5364)", "linear-gradient(135deg,#d6fff6,#3ee6c1)"],
   ];
-  const SPANS = ["h2", "", "w2", "", "", "h2", "", "", "w2", "", "h2", "", "", "", "w2", "", "", "h2", "", "", "", "w2", "", "", "", "", ""];
+  const SPANS = ["h2", "", "", "h2", "", "", "h2", "", "w2", "", "h2", "", "", "", "h2", "", "", "h2", "", "", "", "h2", "", "", "", "", ""];
 
   const FLOW_EDGES = [
     ["foto", "imgA"], ["foto", "imgB"], ["foto", "ig"], ["foto", "cat"],
@@ -71,18 +74,16 @@
   function buildCollage() {
     const grid = $("#collage-grid");
     const rand = rng(2026);
-    const media = [...COLLAGE_MEDIA];
+    const media = COLLAGE_MEDIA;
     const total = Math.max(40, media.length);
-    const step = media.length ? total / media.length : Infinity;
-    let nextMediaAt = 0;
     for (let i = 0; i < total; i++) {
       const tile = document.createElement("div");
       tile.className = `tile ${SPANS[i % SPANS.length]}`;
       tile.style.setProperty("--r", `${(rand() * 5 - 2.5).toFixed(2)}deg`);
       tile.style.setProperty("--d", `${(rand() * 2.6).toFixed(2)}s`);
-      if (media.length && i >= nextMediaAt) {
-        const src = media.shift();
-        nextMediaAt += step;
+      if (media.length) {
+        // recorre todas las imágenes en un orden mezclado antes de repetir
+        const src = media[(i * 11 + Math.floor(i / media.length)) % media.length];
         const el = document.createElement(/\.(mp4|webm|mov)$/i.test(src) ? "video" : "img");
         Object.assign(el, { src, muted: true, loop: true, playsInline: true, alt: "" });
         if (el.tagName === "VIDEO") el.dataset.collageVideo = "";

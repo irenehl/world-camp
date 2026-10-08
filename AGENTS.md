@@ -5,7 +5,7 @@ Charla "The creative side of AI with ElevenLabs" (WordCamp Guatemala 2026, sáb 
 ## Estructura
 - `deck/`: presentación en HTML/CSS/JS sin build (escenario fijo de 1920x1080 que se escala). Fuentes locales (Noto Sans para títulos, Archivo para párrafos), así funciona sin internet.
 - `deck/assets/brand/`: imágenes de la plantilla oficial WCGT26 (sacadas de `source.pptx` → `pptx/ppt/media`).
-- `deck/assets/collage/`: imágenes/videos del collage; se registran en `COLLAGE_MEDIA` dentro de `deck/deck.js`. `murmullo.mp3` (opcional) suena mientras corre el collage.
+- `deck/assets/collage/`: anuncios reales hechos con IA (01–28), registrados en `COLLAGE_MEDIA` dentro de `deck/deck.js`. El bingo (slide 4) reutiliza 6 de ellos. `murmullo.mp3` (opcional) suena mientras corre el collage.
 - `deck/assets/ads/backup.mp4`: anuncio de respaldo (slide 7 y tecla B).
 - `flow/flow-spec.md`: especificación del flow de ElevenCreative Flows para la demo en vivo.
 

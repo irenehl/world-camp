@@ -316,24 +316,38 @@ b { font-weight: 600; }
 .bingo-grid .cell {
   position: relative;
   height: 340px;
-  display: grid;
-  place-items: center;
-  padding: 36px;
-  text-align: center;
-  font: 600 40px/1.15 var(--title);
-  color: var(--navy);
+  display: flex;
+  flex-direction: column;
   border-right: 3px solid var(--navy);
   border-top: 3px solid var(--navy);
+  overflow: hidden;
+}
+.bingo-grid .cell img {
+  display: block;
+  width: 100%;
+  height: 236px;
+  object-fit: cover;
+}
+.bingo-grid .cell span {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 0 18px;
+  text-align: center;
+  font: 600 34px/1.1 var(--title);
+  color: var(--navy);
   text-wrap: balance;
 }
 .bingo-grid .cell:nth-child(3n) { border-right: 0; }
 .dab {
   position: absolute;
-  left: 50%; top: 50%;
-  width: 230px; height: 230px;
+  left: 50%; top: 118px;
+  width: 200px; height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle at 40% 38%, rgba(201, 55, 44, 0.78), rgba(201, 55, 44, 0.6) 62%, rgba(201, 55, 44, 0.42));
-  mix-blend-mode: multiply;
+  border: 12px solid var(--red);
+  background: rgba(201, 55, 44, 0.32);
+  box-shadow: 0 0 0 4px rgba(255, 253, 246, 0.85), inset 0 0 0 4px rgba(255, 253, 246, 0.85);
+  z-index: 2;
 }
 .bingo-win {
   position: absolute;
