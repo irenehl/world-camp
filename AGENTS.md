@@ -16,7 +16,7 @@ cd deck && python3 -m http.server 4173
 Abrir http://localhost:4173. Teclas: →/espacio siguiente, ← anterior, F pantalla completa, P vista de presentadora, B anuncio de respaldo.
 
 ## Demo en vivo
-Un solo estilo ("anuncio real y cálido"), sin votación: alguien del público ofrece algo que vende, se entrevista (nombre/producto, qué lo hace diferente, dónde comprarlo) y se corre un único flow. Detalle en `flow/flow-spec.md`.
+Contenido de Instagram para una marca real del público (sin estereotipos de postal): post de venta con titular y precio, foto de marca, foto de catálogo y una story 9:16 con voz. Un solo flow con Background Removal + Nano Banana 2 Lite + Seedance 2.0 Mini. Detalle en `flow/flow-spec.md`; prompt para armarlo con Flows Agent en `flow/flows-agent-prompt.md`. El slide 7 espera `deck/assets/ads/post.jpg`, `catalogo.jpg` y `backup.mp4` (vertical).
 
 ## Convenciones
 - Paleta oficial: #3055f2, #3bd8f2, #3aba24, #ffd200, #fe8600, #127533, #c9372c, #041f33, #f8faff.

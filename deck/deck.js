@@ -35,11 +35,13 @@
   const SPANS = ["h2", "", "", "h2", "", "", "h2", "", "w2", "", "h2", "", "", "", "h2", "", "", "h2", "", "", "", "h2", "", "", "", "", ""];
 
   const FLOW_EDGES = [
-    ["foto", "imgA"], ["foto", "imgB"], ["foto", "ig"], ["foto", "cat"],
-    ["imgA", "vidA"], ["imgB", "vidB"],
+    ["foto", "recorte"],
+    ["recorte", "fotomarca"], ["recorte", "cat"], ["recorte", "post"], ["recorte", "frame"],
+    ["marca", "post"],
+    ["frame", "clip"],
     ["guion", "voz"],
-    ["vidA", "comp"], ["vidB", "comp"], ["voz", "comp"],
-    ["musica", "comp", "up", 110], ["sonido", "comp", "up", 270],
+    ["clip", "story"], ["voz", "story"],
+    ["musica", "story", "up", 130],
   ];
 
   const $ = (s, el = document) => el.querySelector(s);
@@ -136,7 +138,7 @@
     $$(".edges path", flow).forEach((p) => {
       const g = +node(p.dataset.to).dataset.group;
       const from = +node(p.dataset.from).dataset.group;
-      p.classList.toggle("flowing", step > 0 && g === step && from < step);
+      p.classList.toggle("flowing", step > 0 && g === step && from <= step);
       p.classList.toggle("done", step > 0 && g < step);
     });
     $$(".caption", flow.parentElement).forEach((c) => c.classList.toggle("show", +c.dataset.for === step));
@@ -149,7 +151,8 @@
   const overlay = $("#backup-overlay");
   const overlayVideo = $("video", overlay);
   const play = (m) => m && m.play().catch(() => {});
-  backupInline.addEventListener("error", () => backupInline.parentElement.classList.add("missing"));
+  $$(".media-frame img, .media-frame video").forEach((m) =>
+    m.addEventListener("error", () => m.parentElement.classList.add("missing")));
   if (isPresenter) $$("audio, video").forEach((m) => (m.muted = true));
 
   function syncMedia(prevCur) {

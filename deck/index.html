@@ -153,19 +153,27 @@
 <!-- 7 · Backup -->
 <section class="slide bg-paper" id="s-backup" data-title="Uno terminado" data-time="7:00">
   <div class="bar-top"></div>
-  <img class="abs" src="assets/brand/g26-blue.png" alt="" data-anim="reveal" style="--d:.1s;left:-160px;top:620px;width:700px;opacity:.5">
-  <h2 class="abs t-title c-navy" style="left:150px;top:220px;width:700px">
-    <span class="line" data-anim="fade-up">Así se ve</span>
-    <span class="line" data-anim="fade-up" style="--d:.1s">uno terminado.</span>
-  </h2>
-  <p class="abs t-body c-ink2" data-anim="fade-up" style="--d:.25s;left:150px;top:460px;width:600px">Lo hice ayer, con un producto de prueba. Es el mismo flow que vamos a usar ahorita.</p>
-  <div class="abs video-frame" data-anim="scale" style="--d:.2s;left:880px;top:240px">
+  <img class="abs" src="assets/brand/g26-blue.png" alt="" data-anim="reveal" style="--d:.1s;left:1500px;top:560px;width:620px;opacity:.5">
+  <h2 class="abs t-title c-navy" data-anim="fade-up" style="left:150px;top:100px;width:1600px">Así se ve uno terminado.</h2>
+  <p class="abs t-body c-ink2" data-anim="fade-up" style="--d:.15s;left:150px;top:215px;width:1500px">Lo hice ayer con un producto de prueba, con el mismo flow que vamos a usar ahorita.</p>
+  <figure class="abs media-frame" data-anim="fade-up" style="--d:.25s;left:150px;top:400px;width:400px;height:500px">
+    <img src="assets/ads/post.jpg" alt="Post de venta de prueba">
+    <div class="media-missing">Falta <code>assets/ads/post.jpg</code></div>
+    <figcaption>Post de venta</figcaption>
+  </figure>
+  <figure class="abs media-frame" data-anim="fade-up" style="--d:.35s;left:620px;top:450px;width:450px;height:450px">
+    <img src="assets/ads/catalogo.jpg" alt="Foto de catálogo de prueba">
+    <div class="media-missing">Falta <code>assets/ads/catalogo.jpg</code></div>
+    <figcaption>Catálogo</figcaption>
+  </figure>
+  <figure class="abs media-frame" data-anim="fade-up" style="--d:.45s;left:1140px;top:300px;width:338px;height:600px">
     <video id="backup-inline" src="assets/ads/backup.mp4" playsinline preload="auto"></video>
-    <div class="video-missing">Falta <code>assets/ads/backup.mp4</code></div>
-  </div>
+    <div class="media-missing">Falta <code>assets/ads/backup.mp4</code></div>
+    <figcaption>Story</figcaption>
+  </figure>
   <i data-step="1" data-anim="fade" hidden></i>
   <aside class="notes">
-    <p><b>7:00 a 8:00</b> Clic para reproducir el anuncio de respaldo.</p>
+    <p><b>7:00 a 8:00</b> Enseña el post y el catálogo. Clic para reproducir la story.</p>
     <p>"¿Y si lo hacemos con algo de ustedes?"</p>
   </aside>
 </section>
@@ -183,12 +191,11 @@
     <span class="line c-blue" data-anim="fade-up" style="--d:.24s">vender?</span>
   </h2>
   <aside class="notes">
-    <p><b>8:00 a 10:00</b> La oferta: "Te hacemos ahorita el anuncio, el post para Insta y la foto para tu catálogo. Y te los llevas."</p>
-    <p>Preguntas: 1) ¿Cómo te llamas y qué vendes? 2) ¿Qué tiene que no tenga ningún otro? 3) ¿Dónde te lo compran?</p>
-    <p>Foto del producto: si lo trae, tómala tú; si no, que te pase una de su celular o su Instagram. Solo el producto, nada de caras.</p>
-    <p>Anota en la hoja: NOMBRE, PRODUCTO (con artículo), DIFERENCIA (empieza con verbo), DÓNDE.</p>
-    <p>Tómate tu tiempo en la pregunta 2: busca la historia (la receta de la abuela, lo hace a mano, empezó en pandemia). Eso es lo que la IA no sabe.</p>
-    <p>Si el producto es de comida, ropa o algo digital, cambia la escena alternativa del prompt (ver hoja).</p>
+    <p><b>8:00 a 10:00</b> La oferta: "Te hacemos ahorita el post de venta, la foto para tu catálogo y una story. Y te los llevas."</p>
+    <p>Preguntas: 1) ¿Cómo se llama tu marca y qué vendes? 2) ¿Qué lo hace diferente? 3) ¿Cuánto cuesta y dónde lo compran?</p>
+    <p>Foto del producto: si lo trae, tómala tú; si no, que te pase una de su celular o su Instagram. Pídele también una captura de su Instagram o su logo para el nodo "Marca".</p>
+    <p>Anota en la hoja: MARCA, PRODUCTO, DIFERENCIA, PRECIO, DÓNDE, y escribe tú el TITULAR (máx. 5 palabras) y el COLOR.</p>
+    <p>Tómate tu tiempo en la pregunta 2: de ahí sale el titular. Eso es lo que la IA no sabe.</p>
   </aside>
 </section>
 
@@ -197,38 +204,38 @@
   <div class="bar-top"></div>
   <header class="abs flow-head" data-anim="fade-up" style="left:150px;top:70px">
     <h2 class="t-subtitle c-navy">El flow</h2>
-    <span class="genre-pill">Un anuncio de verdad</span>
+    <span class="genre-pill">Post, catálogo y story</span>
   </header>
   <div class="flow" id="flow">
     <svg class="edges" viewBox="0 0 1920 1080" width="1920" height="1080" aria-hidden="true"></svg>
-    <div class="node" data-id="foto" data-group="1" style="--x:150px;--y:350px"><span class="kind">Upload Media</span><strong>Foto real</strong><span class="badge live">en vivo</span></div>
-    <div class="node" data-id="guion" data-group="4" style="--x:150px;--y:700px"><span class="kind">Text</span><strong>Guion</strong><span class="badge live">en vivo</span></div>
-    <div class="node" data-id="imgA" data-group="2" style="--x:560px;--y:140px"><span class="kind">Nano Banana 2 · 16:9</span><strong>Escena 1</strong></div>
-    <div class="node" data-id="imgB" data-group="2" style="--x:560px;--y:280px"><span class="kind">Nano Banana 2 · 16:9</span><strong>Escena 2</strong></div>
-    <div class="node" data-id="ig" data-group="2" style="--x:560px;--y:420px"><span class="kind">Nano Banana 2 · 4:5</span><strong>Post de Insta</strong><span class="badge out">sale directo</span></div>
-    <div class="node" data-id="cat" data-group="2" style="--x:560px;--y:560px"><span class="kind">Nano Banana 2 · 1:1</span><strong>Catálogo</strong><span class="badge out">sale directo</span></div>
-    <div class="node" data-id="vidA" data-group="3" style="--x:970px;--y:140px"><span class="kind">Seedance 2.0 · sin audio</span><strong>Clip 1</strong></div>
-    <div class="node" data-id="vidB" data-group="3" style="--x:970px;--y:280px"><span class="kind">Seedance 2.0 · sin audio</span><strong>Clip 2</strong></div>
-    <div class="node" data-id="voz" data-group="4" style="--x:970px;--y:700px"><span class="kind">Eleven v4</span><strong>Voz diseñada</strong></div>
-    <div class="node node-main" data-id="comp" data-group="6" style="--x:1400px;--y:230px"><span class="kind">Composition</span><strong>El anuncio</strong></div>
-    <div class="node node-small" data-id="musica" data-group="5" style="--x:1400px;--y:600px"><span class="kind">Eleven Music</span><strong>Música</strong><span class="badge ready">listo</span></div>
-    <div class="node node-small" data-id="sonido" data-group="5" style="--x:1600px;--y:600px"><span class="kind">Sound Effects</span><strong>Sonido</strong><span class="badge ready">listo</span></div>
+    <div class="node" data-id="foto" data-group="1" style="--x:150px;--y:250px"><span class="kind">Upload Media</span><strong>Foto real</strong><span class="badge live">en vivo</span></div>
+    <div class="node" data-id="marca" data-group="1" style="--x:150px;--y:430px"><span class="kind">Upload Media</span><strong>Su marca</strong><span class="badge opt">opcional</span></div>
+    <div class="node" data-id="recorte" data-group="2" style="--x:490px;--y:250px"><span class="kind">Background Removal</span><strong>Recorte</strong></div>
+    <div class="node" data-id="fotomarca" data-group="3" style="--x:830px;--y:120px"><span class="kind">Nano Banana · 4:5</span><strong>Foto de marca</strong><span class="badge out">sale directo</span></div>
+    <div class="node" data-id="cat" data-group="3" style="--x:830px;--y:262px"><span class="kind">Nano Banana · 1:1</span><strong>Catálogo</strong><span class="badge out">sale directo</span></div>
+    <div class="node" data-id="post" data-group="3" style="--x:830px;--y:404px"><span class="kind">Nano Banana · 4:5</span><strong>Post de venta</strong><span class="badge out">sale directo</span></div>
+    <div class="node" data-id="frame" data-group="3" style="--x:830px;--y:546px"><span class="kind">Nano Banana · 9:16</span><strong>Frame story</strong></div>
+    <div class="node" data-id="clip" data-group="4" style="--x:1170px;--y:546px"><span class="kind">Seedance · 9:16 · sin audio</span><strong>Clip story</strong></div>
+    <div class="node" data-id="guion" data-group="5" style="--x:150px;--y:710px"><span class="kind">Text</span><strong>Guion</strong><span class="badge live">en vivo</span></div>
+    <div class="node" data-id="voz" data-group="5" style="--x:1170px;--y:710px"><span class="kind">Eleven v4</span><strong>Voz diseñada</strong></div>
+    <div class="node" data-id="musica" data-group="5" style="--x:1510px;--y:730px;width:260px"><span class="kind">Eleven Music</span><strong>Música</strong><span class="badge ready">listo</span></div>
+    <div class="node node-story" data-id="story" data-group="6" style="--x:1510px;--y:200px"><span class="kind">Composition · 9:16</span><strong>Story</strong></div>
   </div>
-  <div class="abs captions" style="left:150px;top:860px;width:1620px">
+  <div class="abs captions" style="left:150px;top:880px;width:1620px">
     <p class="caption" data-for="0">Un solo lienzo. Cada nodo es una decisión.</p>
-    <p class="caption" data-for="1">Empieza con algo real: el producto de verdad.</p>
-    <p class="caption" data-for="2">De una foto: el anuncio, el post y la foto de tu tienda.</p>
-    <p class="caption" data-for="3">Video sin audio: el sonido no se lo dejo al default.</p>
-    <p class="caption" data-for="4">Una voz que suena a persona, no a locutor.</p>
-    <p class="caption" data-for="5">Guitarra y marimba, no música épica. Suena a aquí.</p>
-    <p class="caption" data-for="6">Mismo flow, otro producto, otra historia.</p>
+    <p class="caption" data-for="1">Empieza con algo real: su producto y su marca.</p>
+    <p class="caption" data-for="2">Primero, solo el producto. Nada de manos ni fondo.</p>
+    <p class="caption" data-for="3">Fondo liso, una sombra, una frase y el precio.</p>
+    <p class="caption" data-for="4">Story vertical. Casi nada se mueve: así no se nota.</p>
+    <p class="caption" data-for="5">Una voz que suena a persona, con su historia.</p>
+    <p class="caption" data-for="6">Mismo flow, otra marca, otra historia.</p>
     <span class="caption-step"></span>
   </div>
   <i data-step="6" data-anim="fade" hidden></i>
   <aside class="notes">
     <p><b>10:00 a 16:00</b> Corre el flow en ElevenLabs. Vuelve aquí y avanza un paso por cada nodo mientras genera.</p>
-    <p>1 Foto · 2 Imágenes (escenas + post de Insta + catálogo) · 3 Videos (audio OFF) · 4 Guion + voz · 5 Música y SFX (pregenerados) · 6 Composition.</p>
-    <p>En el paso 2: "Si tienen WooCommerce, la foto de catálogo ya la pueden subir."</p>
+    <p>1 Foto + marca · 2 Recorte · 3 Imágenes (foto de marca, catálogo, post de venta, frame story) · 4 Clip story (audio OFF) · 5 Guion + voz + música · 6 Story.</p>
+    <p>En el paso 3: "Le di una frase y el precio, exactos, y le prohibí todo lo demás." y "Si tienen WooCommerce, la foto de catálogo ya la pueden subir."</p>
     <p>Si algo tarda: pregúntale más al voluntario sobre su negocio (cuándo empezó, quién le compra).</p>
   </aside>
 </section>
@@ -239,12 +246,12 @@
   <img class="abs drift" src="assets/brand/g26-cyan.png" alt="" data-anim="reveal" style="--d:.2s;left:1000px;top:200px;width:1100px;opacity:.55">
   <p class="abs on-air" data-anim="fade" style="left:150px;top:180px"><i></i>EN VIVO</p>
   <h2 class="abs t-mega c-paper" data-anim="fade-up" style="--d:.1s;left:140px;top:300px">Estreno</h2>
-  <p class="abs t-lead c-cyan" data-anim="fade-up" style="--d:.3s;left:150px;top:700px;width:1200px">Un anuncio de verdad, hecho en esta sala.</p>
+  <p class="abs t-lead c-cyan" data-anim="fade-up" style="--d:.3s;left:150px;top:700px;width:1200px">Su post, su catálogo y su story, hechos en esta sala.</p>
   <aside class="notes">
-    <p><b>16:00 a 17:00</b> Cambia a ElevenLabs y pon el Composition en pantalla completa.</p>
-    <p>Si algo falló: tecla <b>B</b> abre el anuncio de respaldo.</p>
-    <p>Después del video, enseña el post de Insta y la foto de catálogo en sus nodos.</p>
-    <p>Pide un aplauso para el voluntario y dile que se lo mandas todo (MP4 + las 2 imágenes).</p>
+    <p><b>16:00 a 17:00</b> Cambia a ElevenLabs y pon la Story en pantalla completa.</p>
+    <p>Si algo falló: tecla <b>B</b> abre la story de respaldo.</p>
+    <p>Después de la story, enseña el post de venta, la foto de marca y la de catálogo en sus nodos.</p>
+    <p>Pide un aplauso para el voluntario y dile que se lo mandas todo.</p>
   </aside>
 </section>
 
@@ -264,7 +271,7 @@
   </h2>
   <aside class="notes">
     <p><b>17:00 a 20:00</b> El "por qué" de negocio. Clic para la segunda frase. Las reglas del siguiente slide son el "cómo".</p>
-    <p>Puntos para decir: tu historia (lo que la IA no sabe, nadie te lo puede copiar: "la receta de su abuela no está en ningún modelo"); tu producto real, no uno de stock; tu forma de hablar (el voseo, el "ahorita", las campanas); tu sello en cada pieza (anuncio, post y catálogo con el mismo estilo).</p>
+    <p>Puntos para decir: tu historia (lo que la IA no sabe, nadie te lo puede copiar: "la receta de su abuela no está en ningún modelo"); tu producto real, no uno de stock; tu forma de hablar (el voseo, el "ahorita", las campanas); tu sello en cada pieza (post, catálogo y story con el mismo estilo).</p>
   </aside>
 </section>
 
