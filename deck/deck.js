@@ -147,12 +147,14 @@
 
   // ---------- Media ----------
   const collageAudio = $("#collage-audio");
-  const backupInline = $("#backup-inline");
   const overlay = $("#backup-overlay");
   const overlayVideo = $("video", overlay);
   const play = (m) => m && m.play().catch(() => {});
-  $$(".media-frame img, .media-frame video").forEach((m) =>
-    m.addEventListener("error", () => m.parentElement.classList.add("missing")));
+  $$(".media-frame img, .media-frame video").forEach((m) => {
+    const miss = () => m.parentElement.classList.add("missing");
+    m.addEventListener("error", miss);
+    if (m.tagName === "IMG" && m.complete && !m.naturalWidth) miss();
+  });
   if (isPresenter) $$("audio, video").forEach((m) => (m.muted = true));
 
   function syncMedia(prevCur) {
@@ -162,9 +164,6 @@
     $$("[data-collage-video]").forEach((v) => (collage && state.step === 0 ? play(v) : v.pause()));
     if (collage && state.step === 0) play(collageAudio); else collageAudio.pause();
     if (prevCur !== state.cur && collage) collageAudio.currentTime = 0;
-
-    if (s.id === "s-backup" && state.step >= 1) play(backupInline);
-    else { backupInline.pause(); if (s.id !== "s-backup") backupInline.currentTime = 0; }
 
     overlay.hidden = !state.backup;
     if (state.backup) { overlayVideo.currentTime = 0; play(overlayVideo); } else overlayVideo.pause();
