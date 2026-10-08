@@ -17,7 +17,7 @@ cd deck && python3 -m http.server 4173
 Abrir http://localhost:4173. Teclas: →/espacio siguiente, ← anterior, F pantalla completa, P vista de presentadora, B anuncio de respaldo.
 
 ## Demo en vivo
-Contenido de Instagram para un producto del público: post de venta con titular y precio, catálogo, story y un anuncio con voz. **`flow/flows-agent-prompt.md` es el registro del flow real armado en Flows** (nodos, conexiones y prompts exactos); el slide del flow (slide 9) lo copia tal cual: el diagrama de fondo y, por cada clic, un panel con el prompt real del nodo activo. Si cambia el flow hay que actualizar ambos. `flow/flow-spec.md` es el plan y la guía de la dinámica. El slide 7 muestra los resultados de prueba de `deck/assets/results/` (`post.webp`, `catalogo.webp`, `story.webp`); la tecla B reproduce `deck/assets/ads/backup.mp4` si existe.
+Contenido de Instagram para un producto del público: post de venta con titular y precio, catálogo, story y un anuncio con voz. **`flow/flows-agent-prompt.md` es el registro del flow real armado en Flows** (nodos, conexiones y prompts exactos); el slide del flow (slide 9) lo refleja: el diagrama de fondo y, por cada clic, un panel con el prompt del nodo activo **traducido al español** para el público (el `.md` se queda en inglés, como en Flows). Si cambia el flow hay que actualizar ambos. `flow/flow-spec.md` es el plan y la guía de la dinámica. El slide 7 muestra los resultados de prueba de `deck/assets/results/` (`post.webp`, `catalogo.webp`, `story.webp`); la tecla B reproduce `deck/assets/ads/backup.mp4` si existe.
 
 ## Convenciones
 - Paleta oficial: #3055f2, #3bd8f2, #3aba24, #ffd200, #fe8600, #127533, #c9372c, #041f33, #f8faff.
