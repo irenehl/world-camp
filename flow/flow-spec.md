@@ -1,5 +1,7 @@
 # Flow "¿Alguien tiene algo que quiera vender?" · Especificación
 
+> **Ojo:** este documento es el plan y la guía de la dinámica. El flow que realmente está armado (nodos, conexiones y prompts exactos) está en `flows-agent-prompt.md`, y es el que copian el diagrama y las tarjetas de prompts del deck.
+
 Charla: **The creative side of AI with ElevenLabs** · WordCamp Guatemala 2026
 Sábado 10 oct, 3:00 pm, track Growth, Universidad Galileo (zona 10)
 

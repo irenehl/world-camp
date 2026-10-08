@@ -173,6 +173,7 @@
     slides.forEach((s, i) => s.classList.toggle("is-active", i === state.cur));
     const s = slides[state.cur];
     $$("[data-step]", s).forEach((e) => e.classList.toggle("on", +e.dataset.step <= state.step));
+    $$("[data-until]", s).forEach((e) => e.classList.toggle("past", state.step > +e.dataset.until));
     if (s.id === "s-flow") updateFlow(state.step);
     syncMedia(prevCur);
     if (!isPresenter) history.replaceState(null, "", `#${state.cur + 1}.${state.step}`);
