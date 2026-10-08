@@ -468,28 +468,6 @@ b { font-weight: 600; }
 .media-frame.missing img, .media-frame.missing video { display: none; }
 .media-frame.missing .media-missing { display: flex; }
 
-/* ---------- 8 · Los prompts ---------- */
-.pcard {
-  width: 1620px;
-  height: 720px;
-  padding: 48px 60px;
-  background: #fff;
-  border: 3px solid var(--line);
-  border-radius: 28px;
-  box-shadow: 0 40px 80px -50px rgba(4, 31, 51, 0.45);
-}
-.pcard header {
-  display: flex;
-  align-items: baseline;
-  gap: 28px;
-  padding-bottom: 26px;
-  border-bottom: 2px solid var(--line);
-}
-.pnode { font: 600 54px/1 var(--title); color: var(--navy); letter-spacing: -0.015em; }
-.pmeta { font: 400 26px var(--body); color: var(--ink2); }
-.pcount { margin-left: auto; font: 600 26px var(--title); color: var(--blue); }
-.ptext { margin-top: 34px; font: 400 35px/1.5 var(--body); color: var(--navy); text-wrap: pretty; }
-.pcard.generic .ptext { margin-top: 120px; font-size: 72px; line-height: 1.2; color: var(--ink2); }
 .var {
   color: var(--navy);
   background: var(--yellow);
@@ -527,7 +505,12 @@ b { font-weight: 600; }
   background: var(--blue);
   color: var(--paper);
 }
-.flow { position: absolute; inset: 0; }
+.flow {
+  position: absolute;
+  inset: 0;
+  transform: translate(-40px, 230px) scale(0.68);
+  transform-origin: 0 0;
+}
 .edges { position: absolute; inset: 0; overflow: visible; }
 .edges path {
   fill: none;
@@ -630,6 +613,37 @@ b { font-weight: 600; }
   font: 400 26px var(--body);
   color: var(--ink2);
 }
+
+.fpanel {
+  width: 690px;
+  height: 880px;
+  padding: 40px 44px;
+  background: #fff;
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 0 40px 80px -50px rgba(4, 31, 51, 0.45);
+  display: flex;
+  flex-direction: column;
+}
+.fp-step { font: 600 22px var(--title); color: var(--blue); }
+.fp-node { margin: 14px 0 0; font: 600 56px/1.05 var(--title); color: var(--navy); letter-spacing: -0.015em; }
+.fp-meta { margin-top: 12px; font: 400 22px var(--body); color: var(--ink2); }
+.fp-copy { margin-top: 26px; font: 600 34px/1.2 var(--title); color: var(--navy); text-wrap: balance; }
+.fp-prompt {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 2px solid var(--line);
+}
+.fp-label {
+  display: inline-block;
+  font: 600 18px var(--title);
+  letter-spacing: 0.06em;
+  color: var(--ink2);
+  margin-bottom: 12px;
+}
+.fp-prompt p { font: 400 23px/1.5 var(--body); color: var(--navy); text-wrap: pretty; }
+.fp-none p { color: var(--ink2); font-style: italic; }
+.fp-generic .fp-prompt p { font-size: 44px; line-height: 1.25; color: var(--ink2); }
 
 /* ---------- 11 · Estreno ---------- */
 .on-air {

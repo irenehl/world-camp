@@ -107,8 +107,8 @@
   const node = (id) => $(`.node[data-id="${id}"]`, flow);
   function buildFlow() {
     const svg = $(".edges", flow);
-    const groupDelay = { 1: 0.1, 2: 0.3, 3: 0.5, 4: 0.3, 5: 0.7, 6: 0.9 };
-    $$(".node", flow).forEach((n) => n.style.setProperty("--d", `${groupDelay[n.dataset.group]}s`));
+    const groupDelay = (g) => 0.1 + (g - 1) * 0.06;
+    $$(".node", flow).forEach((n) => n.style.setProperty("--d", `${groupDelay(+n.dataset.group)}s`));
     svg.innerHTML = FLOW_EDGES.map(([a, b, mode, offset]) => {
       const A = node(a), B = node(b);
       let d;
@@ -122,7 +122,7 @@
         const c = (x2 - x1) / 2;
         d = `M${x1} ${y1} C${x1 + c} ${y1} ${x2 - c} ${y2} ${x2} ${y2}`;
       }
-      const delay = groupDelay[B.dataset.group] + 0.2;
+      const delay = groupDelay(+B.dataset.group) + 0.2;
       return `<path d="${d}" pathLength="1" data-to="${b}" data-from="${a}" style="--d:${delay}s"/>`;
     }).join("");
   }
@@ -140,8 +140,6 @@
       p.classList.toggle("flowing", step > 0 && g === step && from <= step);
       p.classList.toggle("done", step > 0 && g < step);
     });
-    $$(".caption", flow.parentElement).forEach((c) => c.classList.toggle("show", +c.dataset.for === step));
-    $(".caption-step", flow.parentElement).textContent = step ? `Paso ${step} de 6` : "";
   }
 
   // ---------- Media ----------
