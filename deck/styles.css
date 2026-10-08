@@ -467,6 +467,46 @@ b { font-weight: 600; }
 .media-frame.missing img, .media-frame.missing video { display: none; }
 .media-frame.missing .media-missing { display: flex; }
 
+/* ---------- 9 · El prompt ---------- */
+.prompt-generic {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 34px 44px;
+  background: #fff;
+  border: 3px solid var(--line);
+  border-radius: 22px;
+}
+.prompt-generic p { font: 400 44px/1.2 var(--body); color: var(--ink2); }
+.prompt-label {
+  flex: none;
+  font: 600 24px var(--title);
+  color: var(--ink2);
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--line);
+}
+.prompt-kicker { font: 600 34px var(--title); }
+.prompt-rows { list-style: none; margin: 0; padding: 0; }
+.prompt-rows li {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  align-items: baseline;
+  gap: 30px;
+  padding: 18px 0;
+  border-top: 2px solid var(--line);
+}
+.prompt-rows b { font: 600 32px var(--title); color: var(--blue); }
+.prompt-rows span { font: 400 34px/1.3 var(--body); color: var(--navy); }
+.var {
+  font: inherit !important;
+  color: var(--navy) !important;
+  background: var(--yellow);
+  padding: 0 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
 /* ---------- 8 · Questions ---------- */
 .questions li, .uses li, .rules li {
   display: flex;
