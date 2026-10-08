@@ -677,16 +677,33 @@ b { font-weight: 600; }
 
 /* ---------- 13 · Rules ---------- */
 .rules li {
-  font: 600 66px/1.1 var(--title);
+  font: 600 50px/1.1 var(--title);
   letter-spacing: -0.015em;
   color: var(--paper);
   height: 104px;
+  border-top: 2px solid rgba(248, 250, 255, 0.22);
 }
 .rules b {
   flex: none;
-  width: 70px;
+  width: 64px;
   color: var(--yellow);
-  font: 600 66px var(--title);
+  font: 600 50px var(--title);
+}
+.rules-result {
+  margin: 0;
+  width: 600px;
+  rotate: 3deg;
+}
+.rules-result img {
+  display: block;
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 0 0 8px var(--paper), 0 50px 80px -30px rgba(4, 31, 51, 0.7);
+}
+.rules-result figcaption {
+  margin-top: 36px;
+  font: 600 34px var(--title);
+  color: var(--yellow);
 }
 
 /* ---------- Backup overlay ---------- */
