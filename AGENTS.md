@@ -9,6 +9,7 @@ Charla "The creative side of AI with ElevenLabs" (WordCamp Guatemala 2026, sáb 
 - `deck/assets/results/`: post, catálogo y story de prueba generados con el flow (slide 7).
 - `deck/assets/ads/backup.mp4`: story de respaldo en video (tecla B), opcional.
 - `flow/flow-spec.md`: especificación del flow de ElevenCreative Flows para la demo en vivo.
+- `carousel/`: carrusel de Instagram (1080x1350, 11 slides) con el contenido de la charla, sin marca de WordCamp (blanco hueso, negro, fuente Geist y un degradado suave). `index.html` muestra todas las slides; `npm install && npm run export` (dentro de `carousel/`) genera los PNG en `carousel/export/`. Caption en `carousel/caption.md`.
 
 ## Correr
 ```

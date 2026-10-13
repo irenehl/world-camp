@@ -1,0 +1,11 @@
+{
+  "name": "wcgt26-carousel",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node render.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.55.0"
+  }
+}
