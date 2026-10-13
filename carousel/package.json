@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "export": "node render.mjs"
+    "export": "node render.mjs",
+    "video": "node build-video.mjs"
   },
   "devDependencies": {
     "playwright-core": "^1.55.0"

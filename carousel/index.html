@@ -114,6 +114,11 @@ body.export .preview .post { zoom: 1; }
 .steps li::before { content: counter(s); font: 500 28px var(--mono); color: var(--muted); min-width: 36px; }
 .label { display: block; }
 
+/* video slide */
+.vwin { position: absolute; left: 96px; top: 262px; width: 888px; height: 888px; border-radius: 28px; overflow: hidden; background: var(--ink); z-index: 2; box-shadow: 0 40px 70px -40px rgba(14,14,16,0.45); }
+.vwin img { display: block; width: 100%; height: 100%; }
+.vlabel { position: absolute; left: 96px; right: 96px; top: 1184px; z-index: 2; font: 600 46px/1.1 var(--sans); letter-spacing: -0.03em; }
+
 /* recipe */
 .recipe { list-style: none; margin: 64px 0 0; padding: 0; }
 .recipe li { display: flex; gap: 32px; align-items: baseline; padding: 44px 0; border-top: 2px solid var(--line); font: 600 64px/1.08 var(--sans); letter-spacing: -0.035em; }
@@ -127,7 +132,7 @@ body.export .preview .post { zoom: 1; }
 <!-- 01 · Portada -->
 <section class="post" id="p01">
   <div class="orb" style="right:-260px;top:-200px;width:900px;height:900px"></div>
-  <div class="top"><span>The creative side of AI</span><span>1 / 6</span></div>
+  <div class="top"><span>The creative side of AI</span><span>1 / 7</span></div>
   <div class="content">
     <h1 class="xl push" style="margin-bottom:150px">Tu anuncio con IA no tiene que <span class="hl">verse como IA.</span></h1>
   </div>
@@ -143,7 +148,7 @@ body.export .preview .post { zoom: 1; }
     <img src="assets/img/09.jpg" alt=""><img src="assets/img/22.jpg" alt=""><img src="assets/img/13.jpg" alt=""><img src="assets/img/02.jpg" alt="">
   </div>
   <div class="shade"></div>
-  <div class="top"><span>The creative side of AI</span><span>2 / 6</span></div>
+  <div class="top"><span>The creative side of AI</span><span>2 / 7</span></div>
   <div class="content">
     <h2 class="xl push" style="margin-bottom:150px">Así se ven casi todos los anuncios con IA.</h2>
   </div>
@@ -152,15 +157,15 @@ body.export .preview .post { zoom: 1; }
 
 <!-- 03 · Contraste -->
 <section class="post" id="p03">
-  <div class="top"><span>The creative side of AI</span><span>3 / 6</span></div>
+  <div class="top"><span>The creative side of AI</span><span>3 / 7</span></div>
   <div class="content" style="padding-top:70px">
     <span class="label">Lo que pide todo mundo</span>
     <div class="pbox muted" style="margin-top:18px;font-size:38px">“Anuncio de Instagram para una botella de plástico”</div>
     <span class="label" style="margin-top:72px">Lo que funciona</span>
     <ol class="steps">
       <li>Mi botella, tal cual es.</li>
-      <li>Fondo naranja liso.</li>
-      <li>Luz de ventana, una sombra.</li>
+      <li>Fondo liso, un solo color.</li>
+      <li>Luz dura, una sola sombra.</li>
       <li>Solo esta frase y el precio.</li>
       <li>Nada más.</li>
     </ol>
@@ -168,27 +173,38 @@ body.export .preview .post { zoom: 1; }
   <div class="bottom"><span>@irenehl__</span><span></span></div>
 </section>
 
-<!-- 04 · Resultado -->
+<!-- 04 · El flujo (video en export/04.mp4; esta es su portada) -->
 <section class="post" id="p04">
-  <div class="top"><span>The creative side of AI</span><span>4 / 6</span></div>
+  <div class="top"><span>The creative side of AI</span><span>4 / 7</span></div>
+  <div class="content" style="padding-top:60px">
+    <h2 class="m">Así se ve el flujo en ElevenLabs</h2>
+  </div>
+  <div class="vwin"><img src="assets/img/flow-still.jpg" alt="El flujo de ElevenLabs con las imágenes generadas"></div>
+  <p class="vlabel">Subes la foto. Le das Run. Sale todo.</p>
+  <div class="bottom"><span>@irenehl__</span><span>Hecho con ElevenLabs</span></div>
+</section>
+
+<!-- 05 · Resultado -->
+<section class="post" id="p04">
+  <div class="top"><span>The creative side of AI</span><span>5 / 7</span></div>
   <div class="content" style="padding-top:60px">
     <h2 class="m">Una foto de celular. Tres piezas listas.</h2>
     <div class="frame" style="margin-top:44px;align-self:flex-start">
-      <img class="shot" src="assets/img/post.webp" alt="Post de venta de una botella de plástico naranja con el texto Tomá agua sin pensarlo, Q95" style="width:888px;height:495px">
+      <img class="shot" src="assets/img/post-new.jpg" alt="Post de venta: botella reusable de colores sobre fondo liso con el texto Botella reusable, 25 USD" style="width:888px;height:426px">
       <span class="tag">Post de venta</span>
     </div>
     <div style="display:flex;gap:24px;margin-top:24px">
-      <div class="frame"><img class="shot" src="assets/img/catalogo.webp" alt="Foto de catálogo de la botella" style="width:432px;height:380px"><span class="tag">Catálogo</span></div>
-      <div class="frame"><img class="shot" src="assets/img/story.webp" alt="Story de la botella en una ventana" style="width:432px;height:380px;object-position:50% 65%"><span class="tag">Story</span></div>
+      <div class="frame"><img class="shot" src="assets/img/catalogo-new.jpg" alt="Foto de catálogo de cuatro botellas de colores" style="width:432px;height:440px"><span class="tag">Catálogo</span></div>
+      <div class="frame"><img class="shot" src="assets/img/story-new.jpg" alt="Story de las botellas en una ventana colonial" style="width:432px;height:440px;object-position:50% 70%"><span class="tag">Story</span></div>
     </div>
   </div>
   <div class="bottom"><span>@irenehl__</span><span>Hecho con ElevenLabs</span></div>
 </section>
 
-<!-- 05 · Receta -->
+<!-- 06 · Receta -->
 <section class="post" id="p05">
   <div class="orb" style="left:-320px;bottom:-340px;opacity:.6"></div>
-  <div class="top"><span>The creative side of AI</span><span>5 / 6</span></div>
+  <div class="top"><span>The creative side of AI</span><span>6 / 7</span></div>
   <div class="content" style="padding-top:70px">
     <h2 class="l">La receta</h2>
     <ol class="recipe">
@@ -200,10 +216,10 @@ body.export .preview .post { zoom: 1; }
   <div class="bottom"><span>@irenehl__</span><span></span></div>
 </section>
 
-<!-- 06 · Cierre -->
+<!-- 07 · Cierre -->
 <section class="post" id="p06">
   <div class="orb" style="right:-240px;bottom:-260px;width:980px;height:980px"></div>
-  <div class="top"><span>The creative side of AI</span><span>6 / 6</span></div>
+  <div class="top"><span>The creative side of AI</span><span>7 / 7</span></div>
   <div class="content" style="padding-top:80px">
     <p class="l muted">No hay que odiar la IA.</p>
     <h2 class="xl" style="margin-top:20px">Hay que <span class="hl">saber usarla.</span></h2>

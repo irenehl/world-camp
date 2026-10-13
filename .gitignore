@@ -2,3 +2,4 @@
 # Contenido descomprimido de source.pptx (se regenera con: unzip source.pptx -d pptx)
 pptx/
 node_modules/
+carousel/raw/
