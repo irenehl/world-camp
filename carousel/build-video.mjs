@@ -11,12 +11,14 @@ const tmp = join(here, "raw", "layers");
 mkdirSync(tmp, { recursive: true });
 
 // Tramos de la grabación: [inicio, fin, velocidad, recorte "w:h:x:y", texto]
+// El último tramo es un mosaico con todos los resultados: post arriba; catálogo, story y el clip (en movimiento) abajo.
 const SEGMENTS = [
   [2, 4.5, 1, "1300:1300:500:200", "1 · Subes la foto del producto"],
   [6, 35, 6, "1500:1500:685:150", "2 · Le das Run y se genera todo"],
   [56.5, 59.5, 1, "1340:1340:1126:210", "3 · El post de venta, listo"],
-  [151, 156, 1, "1200:1200:946:274", "4 · Y hasta el video"],
+  [151, 157, 1, "490:766:1352:560", "4 · Todo listo, de una sola foto", "mosaic"],
 ];
+const MOSAIC_IMAGES = ["post-new.jpg", "catalogo-new.jpg", "story-new.jpg"];
 const WIN = { x: 96, y: 262, size: 888 };
 
 const browser = await chromium.launch();
@@ -43,8 +45,23 @@ await browser.close();
 
 const durations = SEGMENTS.map(([a, b, speed]) => (b - a) / speed);
 const total = durations.reduce((x, y) => x + y, 0);
-const parts = SEGMENTS.map(([a, b, speed, crop], i) =>
-  `[0:v]trim=start=${a}:end=${b},setpts=(PTS-STARTPTS)/${speed},crop=${crop},scale=${WIN.size}:${WIN.size},fps=30,format=yuva420p[s${i}]`);
+const img = 3 + SEGMENTS.length; // primer input de las imágenes del mosaico
+const parts = SEGMENTS.map(([a, b, speed, crop, , kind], i) => {
+  const clip = `[0:v]trim=start=${a}:end=${b},setpts=(PTS-STARTPTS)/${speed},crop=${crop}`;
+  if (kind !== "mosaic") return `${clip},scale=${WIN.size}:${WIN.size},fps=30,format=yuva420p[s${i}]`;
+  const d = (b - a) / speed, W = WIN.size, gap = 12, tw = (W - 2 * gap) / 3, th = W - 426 - gap;
+  return [
+    `color=c=0xE9E6DF:s=${W}x${W}:d=${d}:r=30[canvas${i}]`,
+    `[${img}:v]scale=${W}:426,setsar=1[mp${i}]`,
+    `[${img + 1}:v]scale=-2:${th},crop=${tw}:${th},setsar=1[mc${i}]`,
+    `[${img + 2}:v]scale=-2:${th},crop=${tw}:${th},setsar=1[ms${i}]`,
+    `${clip},scale=${tw}:${th},setsar=1,fps=30[mv${i}]`,
+    `[canvas${i}][mp${i}]overlay=0:0[m1${i}]`,
+    `[m1${i}][mc${i}]overlay=0:${426 + gap}[m2${i}]`,
+    `[m2${i}][ms${i}]overlay=${tw + gap}:${426 + gap}[m3${i}]`,
+    `[m3${i}][mv${i}]overlay=${2 * (tw + gap)}:${426 + gap}:shortest=1,format=yuva420p[s${i}]`,
+  ].join(";");
+});
 let t = 0;
 const labels = SEGMENTS.map((_, i) => {
   const from = t, to = (t += durations[i]);
@@ -64,6 +81,7 @@ const args = ["-y", "-v", "error", "-i", join(here, "raw", "flow.mov"),
   "-loop", "1", "-t", String(total), "-i", join(tmp, "bg.png"),
   "-loop", "1", "-t", String(total), "-i", join(tmp, "mask.png"),
   ...SEGMENTS.flatMap((_, i) => ["-loop", "1", "-t", String(total), "-i", join(tmp, `label${i}.png`)]),
+  ...MOSAIC_IMAGES.flatMap((f) => ["-loop", "1", "-t", String(total), "-i", join(here, "assets", "img", f)]),
   "-filter_complex", filter, "-map", `[l${SEGMENTS.length - 1}]`,
   "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30", "-crf", "18", "-movflags", "+faststart",
   join(here, "export", "04.mp4")];
